@@ -1,0 +1,280 @@
+/* GLOBAL */
+
+*{
+    background-color: black;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+/* ANIMATED BACKGROUND CANVAS */
+
+#bgCanvas{
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:-1;
+}
+
+/* HEADER FLEX */
+
+.flex-container{
+    display:flex;
+    height:20px;
+    padding:20px;
+    flex-direction:row;
+    justify-content:flex-start;
+    margin-top:3px;
+}
+
+/* FLEX ITEMS */
+
+.flex-item{
+    padding:5px;
+    flex:1;
+    align-items:center;
+    margin-top:5px;
+}
+
+/* LOGO */
+
+#img{
+    width:135px;
+    height:120px;
+    float:left;
+}
+
+/* HEADER */
+
+header{
+    justify-content:flex-start;
+}
+
+/* TITLE */
+
+#heading{
+    font-size:100px;
+    font-weight:bold;
+    margin-top:5px;
+    text-align:center;
+    color:#ff0000;
+    text-shadow:
+        0 0 10px #ff0000,
+        0 0 20px #ff0000;
+}
+
+/* LOGIN / SIGNUP */
+
+.anchor{
+    margin-top:5px;
+    font-size:medium;
+    float:right;
+    padding:27px;
+    transition:0.3s;
+}
+
+.anchor:hover{
+    border:2px solid red;
+    transform:scale(1.05);
+    border-radius:21%;
+    box-shadow:
+        0 0 10px red,
+        0 0 20px red;
+}
+
+/* LINKS */
+
+a{
+    text-decoration:none;
+    font-size:18px;
+}
+
+/* NAVIGATION */
+
+.nav{
+    display:flex;
+    flex-direction:column;
+    width:15%;
+    padding:30px;
+    float:left;
+    border-radius:15px;
+    border:2px solid #500000;
+    box-shadow:0 0 15px rgba(255,0,0,0.2);
+}
+
+/* GENRE ITEMS */
+
+.nav-item{
+    padding:10px;
+    flex:1;
+    align-items:center;
+    font-size:large;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+/* GENRE HOVER */
+
+.nav-item:hover{
+    color:#ff3a3a;
+    border-left:4px solid red;
+    padding-left:14px;
+    box-shadow:0 0 10px red;
+}
+
+/* MAIN BODY */
+
+.body{
+    width:75%;
+    float:right;
+    padding:5px;
+    border:2px solid #500000;
+    border-radius:15px;
+    margin-top:0;
+    box-shadow:0 0 15px rgba(255,0,0,0.2);
+}
+
+/* LANGUAGE BLOCKS */
+
+.body-item{
+    float:inline-start;
+    padding:130px;
+    font-size:x-large;
+    text-align:center;
+    flex:1;
+    cursor:pointer;
+    border:1px solid #700000;
+    border-radius:10px;
+    margin:10px;
+    transition:0.3s;
+}
+
+/* LANGUAGE HOVER */
+
+.body-item:hover{
+    transform:scale(1.05);
+    box-shadow:
+        0 0 10px red,
+        0 0 25px red;
+}
+
+/* TEXT */
+
+p{
+    text-align:center;
+    font-size:40px;
+}
+
+/* FOOTER */
+
+footer{
+    text-align:left;
+    font-size:large;
+    margin-top:25px;
+    color: crimson;
+}
+
+/* MAIN */
+
+.main{
+    margin-top:10px;
+    padding:2px;
+    width:100%;
+    flex:1;
+    justify-content:flex-start;
+}
+
+/* MOBILE RESPONSIVE */
+
+@media(max-width:768px){
+
+.flex-container{
+    flex-direction:column;
+}
+
+.nav{
+    width:100%;
+    float:none;
+}
+
+.body{
+    width:100%;
+    float:none;
+}
+
+.body-item{
+    padding:40px;
+    display:block;
+    width:80%;
+    margin:auto;
+}
+
+.anchor{
+    float:none;
+}
+}
+/* TRANSPARENT MUSIC SYMBOLS */
+
+.music-bg{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+    z-index:-2;
+}
+
+.music-symbol{
+    position:absolute;
+    font-size:120px;
+    color:rgba(255,255,255,1); /* almost transparent */
+    animation:floatMusic linear infinite;
+    user-select:none;
+}
+
+/* floating animation */
+
+@keyframes floatMusic{
+
+0%{
+    transform:translateY(110vh) rotate(0deg);
+}
+
+100%{
+    transform:translateY(-20vh) rotate(360deg);
+}
+
+}
+/* ---------- MUSIC SYMBOLS WITH 3D DEPTH ---------- */
+.music-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -2;
+}
+
+.music-symbol {
+    position: absolute;
+    color: rgba(255, 255, 255, 0.04);
+    user-select: none;
+    transform: translateY(0) translateX(0) scale(1);
+    animation-name: floatY;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+/* floating vertically */
+@keyframes floatY {
+    0% {
+        transform: translateY(110vh) translateX(var(--x)) scale(var(--scale));
+    }
+    100% {
+        transform: translateY(-20vh) translateX(var(--x)) scale(var(--scale));
+    }
+}

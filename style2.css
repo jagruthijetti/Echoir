@@ -1,0 +1,40 @@
+*{
+    text-align: center;
+    background-color: black;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+img{
+    width: 135px;
+    height: 120px;
+    margin-top: 100px;
+}
+.heading{
+    font-weight: bolder;
+    font-size: 55px;
+}
+.flex-container{
+    display: flex;
+    padding: 15px;
+    flex-direction: column;
+}
+.flex-item{
+    padding: 7px;
+    gap: 2px;
+    
+}
+footer{
+    text-align: center;
+    font-size: small;
+}
+a{
+    text-decoration: none;
+}
+#next
+{
+    border: 1px solid white;
+    padding: 4px;
+    padding-top: 1px;
+    border-bottom: 2px solid grey;
+    border-right: 2px solid grey;
+}
