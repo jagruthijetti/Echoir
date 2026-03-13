@@ -3,20 +3,44 @@
     <head>
         <title>Log In</title>
         <link rel="stylesheet" href="style2.css">
+        <script>
+        function checkLogin(e) {
+             e.preventDefault(); 
+             let user = document.getElementById("email");
+
+                if(user.value==="")
+                { 
+                alert("Username required!");
+                }
+                else{
+                    alert("Login Successful!");
+                    window.location.href= "Echoirmain.html";
+                }
+               
+        }
+    </script>
     </head>
     <body>
             <img src="Echoirlogo.png">
             <h3>Welcome back</h3>
             <br>
-            <p>Email or Usernanme</p>
-            <label for="email"></label><br>
-                <input type="email" name="email" id="email">
-            <br>
-            <p>Password</p>
-            <br>
-            <label for="password"></label>
-                <input type="password" id="password" name="password">
 
-            <p id="goback"><a href="Echoirmain.html">Log In</p>
+            <form action="Echoirmain.html" onsubmit="checkLogin(event)">
+                 <p>Email or Usernanme</p>
+                <label for="email"></label><br>
+                <input type="email" name="email" id="email">
+                <br>
+                <p>Password</p>
+                <br>
+                <label for="password"></label>
+                <input type="password" id="password" name="password">
+                <br><br><br>
+                <button type="submit" id="goback">Log In</button>
+                
+            </form>
+           
+
+         
     </body>
+
 </html>
